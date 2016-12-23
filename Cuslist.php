@@ -8,11 +8,7 @@
 <head>
      <meta charset="utf-8">
  <link rel="stylesheet" type="text/css" href="http://localhost/harrishome/style.css">
- <!-- PTM3쓰려면 이거 밑에 거랑 input button에서 print 주석 풀고 input button에서 EasyPrint 주석처리 -->
-	<!--script type="text/javascript" src="/development/Printmade3.js"></script>
-	<script type="text/javascript" src="/development/PDonut.js"></script-->
-	<script src="../development/print.js"></script>
-	<!-- 부트스트랩 -->
+	<!-- Bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
 	<link href="./css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +58,6 @@
 	
 		<input type="button" class="btn" id="w1" value="White" onclick="changeWhite()">
 		<input type="button" class="btn" id="b1" value="Black" onclick="changeBlack()">
-		<input type="button" class="btn" id="p1" value="Print" onclick="PTMPrintWebPage({})">
 		<a href="http://localhost/harrishome/join.php">Join me !</a>
 	</div>
 	<article>
