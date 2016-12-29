@@ -1,0 +1,45 @@
+	header {
+		border-bottom:1px solid gray;
+		padding:30px;
+		font-family:Lobster;
+	}
+	header img{
+		float:right;
+		height:100px;
+	}
+	nav {
+		border-right:1px solid gray;
+		width:200px;
+		height:800px;
+		float:left;
+		margin-right:20px;
+	}
+	nav li {
+		padding-top:10px;
+		font-size:17px;
+		font-family:monospace;
+	}
+	article {
+		 float:left;
+		padding:20px;
+		width:500px;
+		}
+	#control{
+		float:right;
+		margin:20px;
+	}
+	#control input{
+		padding:3px;
+	}
+	body.change{
+		background-color:black;
+		color:white;
+	}
+	section img{
+		 float:left;
+		 height:400px;
+		 padding:20px;
+	}
+	.FontColor{
+		color:skyblue;
+	}

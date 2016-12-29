@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<?
+	$conn = mysqli_connect("localhost","root",'apmsetup');
+	mysqli_select_db($conn, "jj");
+	$result = mysqli_query($conn, "select * from customerlist");
+?>
+<html>
+<head>
+     <meta charset="utf-8">
+ <link rel="stylesheet" type="text/css" href="http://localhost/harrishome/harrishome/style.css">
+	<!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<!-- 구글 지도 API -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIn5CVIzaDqBpHRjbC66E_ibBwlzmj694&callback=initMap"></script>
+	
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<script>
+	<!-- reversing display -->
+	
+	/*function changeWhite() {
+	document.getElementById('target').className='white';
+	}
+ 
+	function changeBlack() {
+	document.getElementById('target').className='black';
+	}*/
+ 
+	function initialize() {
+			
+		var Y_point = -33.796066;
+		var X_point = 151.182492;
+		
+		var zoomLevel = 16;
+		var markerTitle = "My house";
+		var markerMaxWidth = 300;
+
+		var contentString	= '<div>' +
+			'<h3>Harris Street</h3>'+
+			'<p>427-441 Victoria Ave, Chatswood NSW 2067, Australia</p>'+
+			'<img src="Chatswood.jpg">'+
+			'</div>';
+			
+		var myLatlng = new google.maps.LatLng(Y_point, X_point);
+		var mapOptions = {
+			zoom: zoomLevel,
+			center: myLatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			
+		var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+		
+		var marker = new google.maps.Marker({
+			position: myLatlng,
+			map: map,
+			title: markerTitle});
+			
+		var infowindow = new google.maps.InfoWindow(
+			{
+				content: contentString,
+				maxWidth: markerMaxWidth
+			}
+		);
+		
+		google.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map, marker);
+			});
+	}
+ </script> 
+</head>
+<body class="change" onload="initialize()">
+    <header>
+		<img src="me2.jpg" class="img-rounded">
+        <h1><a href="http://localhost/harrishome/harrishome/main.php">Harris's Page</a></h1>
+    </header>
+    <nav>
+	<ul>
+	<li><a href="http://localhost/harrishome/harrishome/chatting.html">Chatting</a></li>
+	<li><a href="http://localhost/harrishome/harrishome/Cuslist.php">Customer List</a></li>
+	<li><a href="http://localhost/harrishome/harrishome/Myhouse.html">My House</a></li>
+	</ul>
+	<h1><a style="color:yellow"><marquee direction="right">Welcome to Harris's Page</marquee><a></h1>
+    </nav>
+	<div id="control">
+	<!-- reversing display -->
+		<!--input type="button" class="btn" id="w1" value="White" onclick="changeWhite()">
+		<input type="button" class="btn" id="b1" value="Black" onclick="changeBlack()"-->
+		<a href="http://localhost/harrishome/harrishome/join.php">Join me !</a>
+	</div>
+	<article>
+	<div id="map_view" style="width:700px; height:700px; color:blue"></div>
+	</article>
+</body>
+</html>
+
+<!-- customer list에 이름 클릭하면, 그 이름에 대한 정보(이름, 나이, 직업) 나오게. 2016.12.15,,1748-->
